@@ -12,7 +12,7 @@ import io from "socket.io-client";
 import SocketClient from "./SocketClient";
 import Category from "./components/global/Categories";
 import { RootStore } from "./utils/TypeScript";
-const API_URL = `${process.env.API_URL}`;
+import { API_TESTING_URL } from "./utils/config";
 
 const App = () => {
   const { homeBlogs, categories, darkMode, auth } = useSelector(
@@ -33,7 +33,7 @@ const App = () => {
   }, [auth, homeBlogs, dispatch]);
 
   useEffect(() => {
-    const socket = io(API_URL);
+    const socket = io(API_TESTING_URL);
     dispatch({ type: "SOCKET", payload: socket });
     return () => {
       socket.close();
