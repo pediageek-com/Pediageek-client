@@ -12,7 +12,8 @@ import io from "socket.io-client";
 import SocketClient from "./SocketClient";
 import Category from "./components/global/Categories";
 import { RootStore } from "./utils/TypeScript";
-import { API_URL } from "./utils/config";
+const API_URL = `${process.env.API_URL}`;
+
 const App = () => {
   const { homeBlogs, categories, darkMode, auth } = useSelector(
     (state: RootStore) => state

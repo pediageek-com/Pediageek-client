@@ -1,7 +1,6 @@
 import axios from "axios";
-import { API_URL } from "./config";
+const API_URL = `${process.env.API_URL}`;
 axios.defaults.withCredentials = true;
-
 
 export const postAPI = async (url: string, post: object, token?: string) => {
   const res = await axios.post(`${API_URL}/api/${url}`, post, {
