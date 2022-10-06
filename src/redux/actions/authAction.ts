@@ -63,11 +63,8 @@ export const refreshToken =
 
     try {
       dispatch({ type: ALERT, payload: { loading: true } });
-
       const res = await getAPI("refresh_token");
-
       dispatch({ type: AUTH, payload: res.data });
-
       dispatch({ type: ALERT, payload: {} });
     } catch (err: any) {
       dispatch({ type: ALERT, payload: { errors: err.response.data.msg } });
