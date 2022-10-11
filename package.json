@@ -47,6 +47,9 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
+  "reactSnap": {
+    "puppeteerExecutablePath": "/usr/bin/google-chrome-unstable"
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
