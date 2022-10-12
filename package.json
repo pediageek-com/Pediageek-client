@@ -44,14 +44,7 @@
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "postbuild": "react-snap"
-  },
-  "reactSnap": {
-    "puppeteerArgs": [
-      "--no-sandbox",
-      "--disable-setuid-sandbox"
-    ]
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -73,8 +66,7 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.5.14",
-    "@types/react-router-dom": "^5.1.7",
-    "react-snap": "^1.23.0"
+    "@types/react-router-dom": "^5.1.7"
   },
   "resolutions": {
     "@types/react": "^17.0.6",
