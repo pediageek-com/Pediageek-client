@@ -4,7 +4,7 @@ import { IUser, Other } from "../../utils/TypeScript";
 import { addfollowing, removefollowing } from "../../redux/actions/authAction";
 import { RootStore } from "../../utils/TypeScript";
 import { ALERT } from "../../redux/types/alertType";
-import { useHistory } from "react-router-dom";
+import {useRouter} from "next/router";
 
 export interface IProps {
   user: Other;
@@ -15,7 +15,7 @@ const Follow: React.FC<IProps> = ({ user }) => {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
 
-  let history = useHistory();
+  let Router = useRouter();
   const handleClick = () => {
     if (auth.access_token) {
       dispatch(addfollowing(user._id, auth.access_token, auth));
@@ -31,7 +31,7 @@ const Follow: React.FC<IProps> = ({ user }) => {
     }
   };
   const handelURL = () => {
-    history.push(`/login?${history.location.pathname.slice(1)}`);
+    Router.push(`/login?${Router.pathname.slice(1)}`);
   };
 
   useEffect(() => {

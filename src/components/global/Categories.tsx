@@ -10,6 +10,17 @@ const Category = () => {
   const { isdarkMode } = darkMode;
   const history = useHistory();
   const { slug } = useParams<IParams>();
+
+  
+  useEffect(() => {
+    dispatch({
+      type: DARK_MODE,
+      payload: JSON.parse(localStorage.getItem("darkmode") || "{}"),
+    });
+  }, []);
+
+
+
   return (
     <div
       className="bg-dark"

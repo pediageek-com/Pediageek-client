@@ -1,12 +1,8 @@
-import { DARK_MODE } from "../types/Mode";
-
+import { DARK_MODE } from "../types/modeType";
+import { useEffect, useState } from "react";
 // initial state
-const initialState = {
-  // checking mode from localstorage if falsey (e.g. 0, null, undefined, etc.) it will be false, otherwise true
-  isdarkMode: !!JSON.parse(localStorage.getItem("darkmode")||'{}'),
-};
 
-const darkModeReducer = (state = initialState, action) => {
+const darkModeReducer = (state = {}, action) => {
   switch (action.type) {
     case DARK_MODE:
       return {

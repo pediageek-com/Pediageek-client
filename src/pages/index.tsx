@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { Provider, useDispatch, useSelector } from "react-redux";
 import { IBlog, RootStore } from "../utils/TypeScript";
 import CardVert from "../components/cards/CardVert";
 import Loading from "../components/global/Loading";
@@ -12,15 +12,15 @@ import Homevert from "../components/ads/Infeedads";
 import Aibox from "../components/global/Preferance";
 import Todays from "../components/global/Todays";
 import Sidebard from "../components/ads/Sidebard";
+import store from "../redux/store";
+import { DARK_MODE } from "../redux/types/modeType";
 
 const Home = () => {
-  const { homeBlogs, categories, darkMode, auth } = useSelector(
+  const { homeBlogs, darkMode, auth } = useSelector(
     (state: RootStore) => state
   );
-  //const [promo, setPromo] = useState<IBlog>()
-  const { isdarkMode } = darkMode;
-  const [hasMore, setHasMore] = useState(true);
   const dispatch = useDispatch();
+  const [hasMore, setHasMore] = useState(true);
 
   useEffect(() => {
     setHasMore(homeBlogs.count <= homeBlogs.total);

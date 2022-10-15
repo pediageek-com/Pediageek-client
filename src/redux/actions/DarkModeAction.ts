@@ -1,4 +1,4 @@
-import { DARK_MODE } from "../types/Mode";
+import { DARK_MODE } from "../types/modeType";
 
 export const handledarkMode = (e) => async (dispatch) => {
   // getting the true or false value from the parameter and saving that to localstorage

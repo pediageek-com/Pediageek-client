@@ -1,9 +1,10 @@
 import { useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
+import Router from "next/router";
 import { RootStore } from "../../utils/TypeScript";
+import { useRouter } from "next/router";
 const Referal = () => {
     const { auth } = useSelector((state: RootStore) => state);
-    const history = useHistory()
+    const Router = useRouter()
 
     const copy1 = () => {
         if (auth.access_token) {
@@ -16,7 +17,7 @@ const Referal = () => {
             
             Link. ${window.location.origin.toString()}/register?ref=${auth.user?._id}`);
         }
-        else history.push('/register');
+        else Router.push('/register');
         var close = document.getElementById('close');
         close?.click();
     }
@@ -30,7 +31,7 @@ const Referal = () => {
             
             Id - ${auth.user?._id}`);
         }
-        else history.push('/register');
+        else Router.push('/register');
         var close = document.getElementById('close');
         close?.click();
     }

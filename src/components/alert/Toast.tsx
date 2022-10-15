@@ -17,7 +17,7 @@ const Toast = ({ title, body, bgColor }: IProps) => {
   const { darkMode } = useSelector(
     (state: RootStore) => state
   );
-  const { isdarkMode } = darkMode;
+  const isdarkMode  = darkMode;
 
   return (
     <div

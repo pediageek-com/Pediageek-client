@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import Link  from "next/link";
 import { updateUserPre } from "../../redux/actions/preferanceAction";
 import { ALERT } from "../../redux/types/alertType";
 import { getAPI } from "../../utils/FetchData";
@@ -175,7 +175,7 @@ const Aibox = () => {
                   >
                     <Link
                       target="_blank"
-                      to={`/blogs/${category}`}
+                      href={`/blogs/${category}`}
                       style={{
                         textDecoration: "none",
                       }}

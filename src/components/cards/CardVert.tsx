@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import Link  from "next/link";
 import millify from "millify";
 import { IBlog, ICategory, RootStore } from "../../utils/TypeScript";
 import TimeAgo from "javascript-time-ago";
@@ -30,7 +30,7 @@ const CardVert: React.FC<IProps> = ({ blog, ispromoted, category }) => {
         <div className="mx-3">
           <div className="d-flex flex-row justify-content-between align-items-center">
             <Link
-              to={`/profile/${blog.user._id}`}
+              href={`/profile/${blog.user._id}`}
               className="text-decoration-none"
             >
               <div className="d-flex flex-row align-items-center">
@@ -68,7 +68,7 @@ const CardVert: React.FC<IProps> = ({ blog, ispromoted, category }) => {
         </div>
       )}
       <Link
-        to={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}
+        href={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}
         style={{
           textDecoration: "none",
           textTransform: "capitalize",
@@ -78,7 +78,7 @@ const CardVert: React.FC<IProps> = ({ blog, ispromoted, category }) => {
           {blog.thumbnail && (
             <>
               {typeof blog.thumbnail === "string" ? (
-                <Link to={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}>
+                <Link href={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}>
                   <picture
                     style={{
                       display: "block",
@@ -142,7 +142,7 @@ const CardVert: React.FC<IProps> = ({ blog, ispromoted, category }) => {
         <h6 className="card-title">
           {" "}
           <Link
-            to={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}
+            href={`/blog/${blog._id}/${blog.title.replaceAll(" ", "_").replaceAll("/", ".")}`}
             style={{
               textDecoration: "none",
               textTransform: "capitalize",
